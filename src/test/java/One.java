@@ -20,7 +20,7 @@ public class One {
 	
 	@BeforeClass
 	public void setUp() {
-		System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!*******************");
+		System.out.println("Hello Sweta Ji");
 		System.out.println("launching IE browser !!");
 		System.setProperty("webdriver.chrome.driver", driverPath+"chromedriver.exe");
 		driver = new ChromeDriver();
