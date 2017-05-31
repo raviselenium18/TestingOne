@@ -2,26 +2,49 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
 
 public class One {
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		System.out.println("Hello Java!!!");
-		
-		WebDriver driver = new FirefoxDriver();
-		
-		driver.get("https://Google.com");
-		
-		driver.manage().timeouts().implicitlyWait(5L,TimeUnit.SECONDS);
+	/*
+	 * System.setProperty("webdriver.firefox.marionette","C:\\geckodriver.exe");
+	 * driver = new FirefoxDriver();
+	 * static String driverPath = "IE driver path";
+	 */
+
+	static String driverPath = "D:\\Software\\Java\\jars\\";
+	public WebDriver driver;
+	
+	@BeforeClass
+	public void setUp() {
+		System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!*******************");
+		System.out.println("launching IE browser !!");
+		System.setProperty("webdriver.chrome.driver", driverPath+"chromedriver.exe");
+		driver = new ChromeDriver();
+		driver.manage().timeouts().implicitlyWait(5L, TimeUnit.SECONDS);
 		driver.manage().window().maximize();
-		
-	//	driver.findElement(By.cssSelector("#email")).sendKeys("Ravi.singh@gmail.com");
-	//	driver.findElement(By.cssSelector("#pass")).sendKeys("SinghJi");
-	//	driver.findElement(By.cssSelector("#loginbutton")).click();
-		
-		driver.quit(); 
 	}
 
+	// WebDriver driver = new FirefoxDriver();
+	@Test
+	public void add() {
+		System.out.println("Add");
+		//driver = new ChromeDriver();
+		//System.setProperty("webdriver.chrome.driver", "D:\\Software\\Java\\jars\\chromedriver.exe");
+		driver.get("https://facebook.com");
+
+		driver.findElement(By.cssSelector("#email")).sendKeys("Ravi.singh18@gmail.com");
+		driver.findElement(By.cssSelector("#pass")).sendKeys("Sweta1987!");
+		driver.findElement(By.cssSelector("#loginbutton")).click();
+
+	}
+
+	@Test
+	public void multiply() {
+		System.out.println("Multiply");
+		//driver.quit();
+	}
 }
