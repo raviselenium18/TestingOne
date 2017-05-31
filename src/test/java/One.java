@@ -14,7 +14,7 @@ public class One {
 		
 		driver.get("https://Google.com");
 		
-		driver.manage().timeouts().implicitlyWait(2,TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(5L,TimeUnit.SECONDS);
 		driver.manage().window().maximize();
 		
 	//	driver.findElement(By.cssSelector("#email")).sendKeys("Ravi.singh@gmail.com");
