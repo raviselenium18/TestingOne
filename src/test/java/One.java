@@ -36,8 +36,8 @@ public class One {
 		//System.setProperty("webdriver.chrome.driver", "D:\\Software\\Java\\jars\\chromedriver.exe");
 		driver.get("https://facebook.com");
 
-		driver.findElement(By.cssSelector("#email")).sendKeys("Ravi.singh18@gmail.com");
-		driver.findElement(By.cssSelector("#pass")).sendKeys("Sweta1987!");
+		driver.findElement(By.cssSelector("#email")).sendKeys("testing@gmail.com");
+		driver.findElement(By.cssSelector("#pass")).sendKeys("Testing123!");
 		driver.findElement(By.cssSelector("#loginbutton")).click();
 
 	}
